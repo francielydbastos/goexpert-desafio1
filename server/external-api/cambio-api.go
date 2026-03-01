@@ -25,7 +25,7 @@ func GetCambio(ctx context.Context) (*entities.Cotacao, error) {
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		log.Println(err.Error())
-		return nil, errors.New("Erro na requisição à API de Câmbio")
+		return nil, err
 	}
 
 	// Leitura e unmarshal do corpo da resposta

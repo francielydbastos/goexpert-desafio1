@@ -52,11 +52,36 @@ Essa verificação é necessária devido à forma como o GORM executa o SQLite u
 
 ### 4️⃣ Executar o servidor
 
+Abra o terminal e execute o comando abaixo:
+
 ``` bash
 go run ./server
 ```
 
-------------------------------------------------------------------------
+O servidor está disponível no endpoint abaixo e aceita requisições GET:
+
+``` bash
+http://localhost:8080/cotacao
+```
+
+Em caso de sucesso, o endpoint retorna o status 200 OK com a cotação bid no corpo da resposta:
+
+``` bash
+{
+    "bid": "5.1546"
+}
+```
+Em cenários de erro, o endpoint retorna o status 500 StatusInternalServerError com a descrição do erro no corpo da resposta.
+
+### 5️⃣ Executar o cliente
+
+Abra uma nova janela no terminal e execute o comando abaixo:
+
+``` bash
+go run ./client
+```
+
+Ao ser executado, o cliente automaticamente fará uma chamada ao endpoint /cotacao e gravará o valor no arquivo cotacao.txt, na raíz do projeto. Ao executar a aplicação pela 1ª vez, caso o arquivo não exista ele será criado; em execuções posteriores o dado será apenas adicionado ao arquivo já existente, mantendo o arquivo dos valores anteriores.
 
 ## 🗃️ Banco de Dados
 
@@ -66,16 +91,4 @@ O SQLite cria automaticamente o arquivo na raiz do projeto:
 
 Os dados inseridos podem ser visualizados utilizando o sqlite3 ou um plugin de database na IDE.
 
-------------------------------------------------------------------------
-
-## ⏱️ Controle de Timeout
-
-O projeto utiliza contextos com timeout:
-
--   200ms → chamada à API externa
--   10ms → inserção no banco
-
-------------------------------------------------------------------------
-
-## 📌 Observações
 
