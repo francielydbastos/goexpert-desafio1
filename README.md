@@ -24,7 +24,7 @@ As duas partes estão contidas nesse repositório, porém são executadas separa
 ### 1️⃣ Clonar o repositório
 
 ``` bash
-git clone <url-do-repositorio>
+git clone https://github.com/francielydbastos/goexpert-desafio1
 cd Client-Server-API
 ```
 
