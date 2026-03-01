@@ -81,7 +81,7 @@ Abra uma nova janela no terminal e execute o comando abaixo:
 go run ./client
 ```
 
-Ao ser executado, o cliente automaticamente fará uma chamada ao endpoint /cotacao e gravará o valor no arquivo cotacao.txt, na raíz do projeto. Ao executar a aplicação pela 1ª vez, caso o arquivo não exista ele será criado; em execuções posteriores o dado será apenas adicionado ao arquivo já existente, mantendo o arquivo dos valores anteriores.
+Ao ser executado, o cliente automaticamente fará uma chamada ao endpoint /cotacao e gravará o valor no arquivo cotacao.txt, na raíz do projeto. Ao executar a aplicação pela 1ª vez, caso o arquivo não exista ele será criado; em execuções posteriores o dado será apenas adicionado ao arquivo já existente, mantendo o histórico dos valores anteriores.
 
 ## 🗃️ Banco de Dados
 
